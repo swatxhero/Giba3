@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".generate_report">
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="88dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="307dp"
+        android:layout_marginRight="307dp"
+        android:layout_marginBottom="646dp"
+        android:text="GIBA"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="269dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginLeft="71dp"
+        android:layout_marginTop="181dp"
+        android:layout_marginEnd="71dp"
+        android:layout_marginRight="71dp"
+        android:layout_marginBottom="446dp"
+        android:text="Choose a range of dates you would like to include in the report"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText15"
+        android:layout_width="153dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="371dp"
+        android:layout_marginEnd="229dp"
+        android:layout_marginRight="229dp"
+        android:layout_marginBottom="328dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText16"
+        android:layout_width="153dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="214dp"
+        android:layout_marginLeft="214dp"
+        android:layout_marginTop="371dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:layout_marginBottom="328dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="199dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="106dp"
+        android:layout_marginLeft="106dp"
+        android:layout_marginTop="484dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginRight="106dp"
+        android:layout_marginBottom="170dp"
+        android:text="Generate Report"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="77dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="81dp"
+        android:layout_marginLeft="81dp"
+        android:layout_marginTop="633dp"
+        android:layout_marginEnd="253dp"
+        android:layout_marginRight="253dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/profile_pic" />
+
+    <ImageButton
+        android:id="@+id/imageButton11"
+        android:layout_width="83dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="158dp"
+        android:layout_marginLeft="158dp"
+        android:layout_marginTop="632dp"
+        android:layout_marginEnd="170dp"
+        android:layout_marginRight="170dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/search_pic" />
+
+    <ImageButton
+        android:id="@+id/imageButton12"
+        android:layout_width="70dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="241dp"
+        android:layout_marginLeft="241dp"
+        android:layout_marginTop="634dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/calendar_pic" />
+</android.support.constraint.ConstraintLayout>
