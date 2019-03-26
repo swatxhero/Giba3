@@ -161,7 +161,7 @@
             android:layout_marginRight="311dp"
             android:layout_marginBottom="691dp"
             android:text="Edit Event"
-            android:textSize="24px"
+            android:textSize="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
