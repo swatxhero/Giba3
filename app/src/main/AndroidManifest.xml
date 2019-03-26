@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".host_event_page"></activity>
+        <activity android:name=".volunteer_profile"></activity>
+        <activity android:name=".host_event_page" />
         <activity android:name=".edit_events" />
         <activity android:name=".create_event" />
         <activity
