@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".clock_in_out"></activity>
+        <activity android:name=".Signature_Screen"></activity>
+        <activity android:name=".Host_Search" />
+        <activity android:name=".Volunteer_Search" />
+        <activity android:name=".clock_in_out" />
         <activity android:name=".generate_report" />
         <activity android:name=".host_register" />
         <activity android:name=".volunteer_calendar2" />
