@@ -7,7 +7,7 @@
     tools:context=".create_event">
 
     <EditText
-        android:id="@+id/eventName"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="94dp"
@@ -18,14 +18,14 @@
         android:layout_marginBottom="615dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Event Name"
+        android:hint="Event Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="94dp"
@@ -35,15 +35,15 @@
         android:layout_marginRight="104dp"
         android:layout_marginBottom="532dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Event Date"
+        android:inputType="text|date"
+        android:hint="Event Date"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="96dp"
@@ -53,15 +53,15 @@
         android:layout_marginRight="102dp"
         android:layout_marginBottom="458dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Time of Event"
+        android:inputType="text|datetime"
+        android:hint="Time of Event"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="99dp"
@@ -71,15 +71,15 @@
         android:layout_marginRight="99dp"
         android:layout_marginBottom="385dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Location"
+        android:inputType="textPostalAddress"
+        android:hint="Location"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="99dp"
@@ -90,14 +90,14 @@
         android:layout_marginBottom="308dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Description"
+        android:hint="Description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/max_volunteers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="99dp"
@@ -107,8 +107,8 @@
         android:layout_marginRight="99dp"
         android:layout_marginBottom="235dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="# of Volunteers"
+        android:inputType="number"
+        android:hint="# of Volunteers"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -125,15 +125,15 @@
         android:layout_marginRight="99dp"
         android:layout_marginBottom="160dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Image"
+        android:inputType=""
+        android:hint="Image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="223dp"

@@ -14,6 +14,7 @@ public class clock_in_out extends AppCompatActivity {
     private TextView timerText;
     private Button startTimer;
     private Timer timer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +22,6 @@ public class clock_in_out extends AppCompatActivity {
         startTimer = (Button) findViewById(R.id.button13);
         timerText = (TextView) findViewById(R.id.textView14);
         startTimer.setOnClickListener(new View.OnClickListener(){
-
 
             @Override
             public void onClick(View view) {

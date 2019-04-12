@@ -1,29 +1,98 @@
 package com.example.giba2;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "EmailPassword";
+    private FirebaseAuth mAuth;
+    private Button mRegisterButton;
+    private Button mLoginButton;
+    private EditText mUsername;
+    private EditText mPassword;
+    private CheckBox mVolunteerBox;
+    private CheckBox mHostBox;
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        mAuth = FirebaseAuth.getInstance();
+
+        mLoginButton = findViewById(R.id.login_button);
+        mRegisterButton = findViewById(R.id.register_button);
+        mUsername = findViewById(R.id.username);
+        mPassword = findViewById(R.id.password);
+        mVolunteerBox = findViewById(R.id.volunteer_check_box);
+        mHostBox = findViewById(R.id.host_check_box);
+
+        mRegisterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                if (mVolunteerBox.isChecked() && mHostBox.isChecked()) {
+                    mVolunteerBox.setError("You cannot check both \'Host\' and " +
+                            "\'Volunteer\' boxes at one time!");
+                }
+                else if (mVolunteerBox.isChecked()) {
+                    Intent intent = new Intent(MainActivity.this, register_screen.class);
+                    MainActivity.this.startActivity(intent);
+                    finish();
+                }
+                else if (mHostBox.isChecked()) {
+                    Intent intent = new Intent(MainActivity.this, host_register.class);
+                    MainActivity.this.startActivity(intent);
+                    finish();
+                }
+                else {
+                    mVolunteerBox.setError("You must check either the \'Host\' or " +
+                            "\'Volunteer\' check box!");
+                }
+            }
+        });
+
+        mLoginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mVolunteerBox.isChecked() && mHostBox.isChecked()) {
+                    mVolunteerBox.setError("You cannot check both \'Host\' and " +
+                            "\'Volunteer\' boxes at one time!");
+                }
+                else if (mHostBox.isChecked()) {
+                    Intent intent = new Intent(MainActivity.this, host_event_page.class);
+                    MainActivity.this.startActivity(intent);
+                    finish();
+                }
+                else if (mVolunteerBox.isChecked()) {
+                    // TODO: start volunteer homepage
+                }
+                else {
+                    mVolunteerBox.setError("You must check either the \'Host\' or " +
+                            "\'Volunteer\' check box!");
+                }
             }
         });
     }

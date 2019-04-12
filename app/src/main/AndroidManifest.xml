@@ -13,7 +13,6 @@
         <activity android:name=".generate_report" />
         <activity android:name=".host_register" />
         <activity android:name=".volunteer_calendar2" />
-        <activity android:name=".volunteer_calendar" />
         <activity android:name=".register_screen" />
         <activity android:name=".host_profile" />
         <activity android:name=".volunteer_profile" />
