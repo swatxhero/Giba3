@@ -52,25 +52,17 @@ public class host_register extends AppCompatActivity {
 
                 if (!isValidName(orgName)) {
                     mOrgName.setError("Organizaiton Name cannot be empty and must only contain letters.");
-                }
-                else if (!isValidUsername(username)) {
+                } else if (!isValidUsername(username)) {
                     mUsername.setError("Username cannot be empty and must contain more than 5 " +
                             "characters");
-                }
-                else if (!isValidPassword(password)) {
+                } else if (!isValidPassword(password)) {
                     mPassword.setError("Password must contain more than 8 characters.");
-                }
-                else if (isEmpty(ein)) {
+                } else if (isEmpty(ein)) {
                     mEin.setError("EIN must not be empty.");
-                }
-                else if (!isValidEmail(email)) {
+                } else if (!isValidEmail(email)) {
                     mEmail.setError("Email must contain \'@\'.");
-                }
-                else {
+                } else {
                     // TODO: start host homepage
-                    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
-                    DatabaseReference mRef = mDatabase.getReference("Hosts");
-
                     Map<String, Object> docData = new HashMap<>();
                     docData.put("Organization Name", orgName);
                     docData.put("Username", username);

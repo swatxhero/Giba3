@@ -23,6 +23,7 @@ import java.util.Map;
 public class register_screen extends AppCompatActivity {
 
     private static final String alphaRegex = "[a-zA-Z]+";
+    private final String TAG = "Volunteers";
     private EditText mFirstName;
     private EditText mLastName;
     private EditText mUsername;
@@ -91,14 +92,14 @@ public class register_screen extends AppCompatActivity {
                             .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                 @Override
                                 public void onSuccess(DocumentReference documentReference) {
-                                    Log.d("USER", "DocumentSnapshot added with ID: " +
+                                    Log.d(TAG, "DocumentSnapshot added with ID: " +
                                             documentReference.getId());
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
-                                    Log.w("USER", "Error adding document", e);
+                                    Log.w(TAG, "Error adding document", e);
                                 }
                             });
                 }

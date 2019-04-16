@@ -21,6 +21,7 @@ public class clock_in_out extends AppCompatActivity {
         setContentView(R.layout.activity_clock_in_out);
         startTimer = (Button) findViewById(R.id.button13);
         timerText = (TextView) findViewById(R.id.textView14);
+
         startTimer.setOnClickListener(new View.OnClickListener(){
 
             @Override

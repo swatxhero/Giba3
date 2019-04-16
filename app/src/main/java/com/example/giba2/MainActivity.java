@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private Button mRegisterButton;
     private Button mLoginButton;
-    private EditText mUsername;
+    private EditText mEmail;
     private EditText mPassword;
     private CheckBox mVolunteerBox;
     private CheckBox mHostBox;
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         mLoginButton = findViewById(R.id.login_button);
         mRegisterButton = findViewById(R.id.register_button);
-        mUsername = findViewById(R.id.username);
+        mEmail = findViewById(R.id.username);
         mPassword = findViewById(R.id.password);
         mVolunteerBox = findViewById(R.id.volunteer_check_box);
         mHostBox = findViewById(R.id.host_check_box);
@@ -56,18 +56,15 @@ public class MainActivity extends AppCompatActivity {
                 if (mVolunteerBox.isChecked() && mHostBox.isChecked()) {
                     mVolunteerBox.setError("You cannot check both \'Host\' and " +
                             "\'Volunteer\' boxes at one time!");
-                }
-                else if (mVolunteerBox.isChecked()) {
+                } else if (mVolunteerBox.isChecked()) {
                     Intent intent = new Intent(MainActivity.this, register_screen.class);
                     MainActivity.this.startActivity(intent);
                     finish();
-                }
-                else if (mHostBox.isChecked()) {
+                } else if (mHostBox.isChecked()) {
                     Intent intent = new Intent(MainActivity.this, host_register.class);
                     MainActivity.this.startActivity(intent);
                     finish();
-                }
-                else {
+                } else {
                     mVolunteerBox.setError("You must check either the \'Host\' or " +
                             "\'Volunteer\' check box!");
                 }
@@ -75,27 +72,49 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mLoginButton.setOnClickListener(new View.OnClickListener() {
+            String email = mEmail.getText().toString();
+            String password = mPassword.getText().toString();
+
             @Override
             public void onClick(View view) {
                 if (mVolunteerBox.isChecked() && mHostBox.isChecked()) {
                     mVolunteerBox.setError("You cannot check both \'Host\' and " +
                             "\'Volunteer\' boxes at one time!");
-                }
-                else if (mHostBox.isChecked()) {
+                } else if (mHostBox.isChecked()) {
+                    attemptLogin(email, password);
                     Intent intent = new Intent(MainActivity.this, host_event_page.class);
                     MainActivity.this.startActivity(intent);
                     finish();
-                }
-                else if (mVolunteerBox.isChecked()) {
+                } else if (mVolunteerBox.isChecked()) {
                     // TODO: start volunteer homepage
-                }
-                else {
+                    attemptLogin(email, password);
+
+                    finish();
+                } else {
                     mVolunteerBox.setError("You must check either the \'Host\' or " +
                             "\'Volunteer\' check box!");
                 }
             }
         });
     }
+
+    private void attemptLogin(String email, String password) {
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success
+                            Log.d(TAG, "signInWithEmail:success");
+                        } else {
+                            // if Sign in fails, display a message to the user
+                            Log.w(TAG, "signInWithEmail:success");
+                            Toast.makeText(MainActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+        }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

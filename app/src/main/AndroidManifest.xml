@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".clock_in_out"></activity>
+        <activity
+            android:name=".ManageEventsActivity"
+            android:label="@string/title_activity_manage_events"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".clock_in_out" />
         <activity android:name=".generate_report" />
         <activity android:name=".host_register" />
         <activity android:name=".volunteer_calendar2" />
