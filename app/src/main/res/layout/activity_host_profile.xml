@@ -57,7 +57,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/HostProfileImage"
         android:layout_width="80dp"
         android:layout_height="64dp"
         android:layout_marginStart="82dp"
@@ -73,7 +73,7 @@
         app:srcCompat="@drawable/profile_pic" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/HostSearchImage"
         android:layout_width="74dp"
         android:layout_height="64dp"
         android:layout_marginStart="162dp"
@@ -89,7 +89,7 @@
         app:srcCompat="@drawable/search_pic" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/HostCalendarImage"
         android:layout_width="68dp"
         android:layout_height="64dp"
         android:layout_marginStart="236dp"
@@ -153,7 +153,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/SigScreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="71dp"
