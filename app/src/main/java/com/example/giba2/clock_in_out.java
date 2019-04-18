@@ -1,9 +1,11 @@
 package com.example.giba2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -21,6 +23,9 @@ public class clock_in_out extends AppCompatActivity {
         setContentView(R.layout.activity_clock_in_out);
         startTimer = (Button) findViewById(R.id.button13);
         timerText = (TextView) findViewById(R.id.textView14);
+        ImageButton btn = (ImageButton)findViewById(R.id.SearchImage);
+        ImageButton btn2 = (ImageButton)findViewById(R.id.ProfileImage);
+        ImageButton btn3 = (ImageButton)findViewById(R.id.CalandarImage);
 
         startTimer.setOnClickListener(new View.OnClickListener(){
 
@@ -34,6 +39,24 @@ public class clock_in_out extends AppCompatActivity {
 
 
 
+        });
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(clock_in_out.this, Volunteer_Search.class));
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(clock_in_out.this, volunteer_profile.class));
+            }
+        });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(clock_in_out.this, volunteer_calendar2.class));
+            }
         });
     }
 
